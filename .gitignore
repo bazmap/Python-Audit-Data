@@ -1,0 +1,3 @@
+﻿*.log
+*.pyc
+Audit/*.csv
