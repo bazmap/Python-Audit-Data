@@ -1692,7 +1692,7 @@ BEGIN
 								$a$
 							;
 
-							RAISE NOTICE USING MESSAGE = COALESCE(var_requete, '');
+							--RAISE NOTICE USING MESSAGE = COALESCE(var_requete, '');
 
 							-- Boucle sur chaque valeur
 							FOR liste_valeur IN

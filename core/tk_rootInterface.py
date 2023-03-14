@@ -418,7 +418,7 @@ class rootInterface(ttk.Frame):
 		)
 
 		# Définition de la variable
-		parent.widget_var[variable].set(dirname)
+		ba_app_var['param']['init_tk'][variable]['value'].set(dirname)
 
 		# Modification de la vue
 		getattr(self, variable + '_Entry').xview_moveto(1)
@@ -435,7 +435,7 @@ class rootInterface(ttk.Frame):
 		)
 
 		# Définition de la variable
-		parent.widget_var[variable].set(filename)
+		ba_app_var['param']['init_tk'][variable]['value'].set(filename)
 
 		# Modification de la vue
 		getattr(self, variable + '_Entry').xview_moveto(1)
@@ -454,7 +454,7 @@ class rootInterface(ttk.Frame):
 		)
 
 		# Définition de la variable
-		parent.widget_var[variable].set(filename)
+		ba_app_var['param']['init_tk'][variable]['value'].set(filename)
 
 		# Modification de la vue
 		getattr(self, variable + '_Entry').xview_moveto(1)

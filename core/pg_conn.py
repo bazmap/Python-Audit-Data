@@ -5,6 +5,7 @@
 # Modules requis
 import os
 import psycopg
+from bazinga_py.init import *
 
 
 
@@ -16,6 +17,9 @@ def exec_request(sql_request, connexionString):
 		conninfo = connexionString,
 		autocommit = True
 	) as pg_conn:
+
+		# Ajout d'une écoute sur la sortie PG
+		pg_conn.add_notice_handler(log_notice)
 
 		# Définition d'un curseur
 		pg_cur = pg_conn.cursor()
@@ -64,3 +68,10 @@ def exec_requestFromFile(request_file_path, connexionString):
 
 	return return_msg
 
+
+
+# Fonction de récupération des notification du server PG
+def log_notice(diag):
+
+	print(diag.severity + ' | ' + diag.message_primary)
+	ba_logger.info(diag.severity + ' | ' + diag.message_primary)

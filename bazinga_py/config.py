@@ -14,15 +14,15 @@ from bazinga_py.core.config_default import app_var
 
 # Software
 app_var['software']['name'] = "Audit de données"
-app_var['software']['version'] = "0.7"
+app_var['software']['version'] = "1.3"
 app_var['software']['resume'] = "Programme d'audit automatisé des données spatiales"
 app_var['software']['author'] = "Arthur Bazin"
-app_var['software']['copyright'] = datetime.datetime.now().strftime("%Y") + " - Business Geografic"
+app_var['software']['copyright'] = datetime.datetime.now().strftime("%Y") + " - Arthur Bazin"
 #app_var['software']['dir'] = ""
 #app_var['config_dir']['config_dir'] = os.path.join(app_var['software']['dir'], 'config')
 #app_var['config_dir']['config_file_default'] = 'default.conf'
-app_var['software']['logo'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
-app_var['software']['icon'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
+#app_var['software']['logo'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
+#app_var['software']['icon'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
 app_var['software']['splash_screen'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_splash_screen.gif'), )
 
 

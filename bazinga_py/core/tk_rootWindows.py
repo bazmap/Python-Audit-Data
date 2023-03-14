@@ -157,28 +157,29 @@ class rootWindows(ba_tk.Tk):
 		)
 
 
-		# Récupération du fichier de configuration
-		var_configParse = config_file_parser.configLoader(file)
+		if file != '':
+			# Récupération du fichier de configuration
+			var_configParse = config_file_parser.configLoader(file)
 
 
-		# Association à une variable
-		for key in (var_configParse):
+			# Association à une variable
+			for key in (var_configParse):
 
-			if key not in app_var['param']['init_tk']:
+				if key not in app_var['param']['init_tk']:
 
-				if key in app_var['param']['init']:
-					if app_var['param']['init'][key]['type'] == 'boolean':
-						app_var['param']['init_tk'][key]['value'] = tk.BooleanVar()
-					elif app_var['param']['init'][key]['type'] == 'integer':
-						app_var['param']['init_tk'][key]['value'] = tk.IntVar()
-					elif app_var['param']['init'][key]['type'] == 'float':
-						app_var['param']['init_tk'][key]['value'] = tk.DoubleVar()
+					if key in app_var['param']['init']:
+						if app_var['param']['init'][key]['type'] == 'boolean':
+							app_var['param']['init_tk'][key]['value'] = tk.BooleanVar()
+						elif app_var['param']['init'][key]['type'] == 'integer':
+							app_var['param']['init_tk'][key]['value'] = tk.IntVar()
+						elif app_var['param']['init'][key]['type'] == 'float':
+							app_var['param']['init_tk'][key]['value'] = tk.DoubleVar()
+						else:
+							app_var['param']['init_tk'][key]['value'] = tk.StringVar()
 					else:
 						app_var['param']['init_tk'][key]['value'] = tk.StringVar()
-				else:
-					app_var['param']['init_tk'][key]['value'] = tk.StringVar()
 
-			app_var['param']['init_tk'][key]['value'].set(var_configParse[key]['value'])
+				app_var['param']['init_tk'][key]['value'].set(var_configParse[key]['value'])
 
 
 
@@ -199,6 +200,7 @@ class rootWindows(ba_tk.Tk):
 			initialfile = 'config',
 			initialdir = app_var['software']['config_dir']
 		)
-		
-		with open(file, 'w', encoding='utf-8') as file_content:
-			file_content.write(config_file)
+
+		if file != '':
+			with open(file, 'w', encoding='utf-8') as file_content:
+				file_content.write(config_file)
