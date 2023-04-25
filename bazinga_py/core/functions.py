@@ -71,7 +71,7 @@ def getConfigVar(standard_config, var_configFile, var_args):
 	for key in var_args:
 
 		if standard_config[key]['value'] != var_args[key]['value']:
-			final_config[key]['value'] = var_args[key]
+			final_config[key]['value'] = var_args[key]['value']
 
 
 

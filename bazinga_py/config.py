@@ -24,6 +24,8 @@ app_var['software']['copyright'] = datetime.datetime.now().strftime("%Y") + " - 
 #app_var['software']['logo'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
 #app_var['software']['icon'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_icon.gif'), )
 app_var['software']['splash_screen'] = os.path.normpath(os.path.join(app_var['software']['dir'], 'media\\software_splash_screen.gif'), )
+app_var['software']['size']['x'] = 1000
+app_var['software']['size']['y'] = 600
 
 
 

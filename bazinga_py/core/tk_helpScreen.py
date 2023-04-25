@@ -76,7 +76,7 @@ class helpScreen(ba_tk.Toplevel):
 		self.maxsize(self.winfo_screenwidth(), self.winfo_screenheight() - (31 + 30))
 
 		# Taille d'ouverture
-		self.geometry('1000x800')
+		self.geometry('1400x1000')
 
 
 

@@ -53,7 +53,11 @@ app_var['software'] = dict(
 	config_file_default = 'default.conf',
 	logo = os.path.normpath(os.path.join(app_var['framework']['dir'], 'media\\software_icon.gif'), ),
 	icon = os.path.normpath(os.path.join(app_var['framework']['dir'], 'media\\software_icon.gif'), ),
-	splash_screen = os.path.normpath(os.path.join(app_var['framework']['dir'], 'media\\software_splash_screen.gif'), )
+	splash_screen = os.path.normpath(os.path.join(app_var['framework']['dir'], 'media\\software_splash_screen.gif'), ),
+	size = dict(
+		x = 1000,
+		y = 600
+	)
 )
 
 

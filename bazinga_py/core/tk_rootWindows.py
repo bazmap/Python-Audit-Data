@@ -61,8 +61,10 @@ class rootWindows(ba_tk.Tk):
 		self.tk.call("source", os.path.join(app_var['framework']['dir'], 'theme', "azure.tcl"))
 		self.tk.call("set_theme", "light")
 
-		# Taille maximale
+		# Taille minimale
 		self.minsize(400, 400)
+		# Taille de l'application
+		self.geometry(str(app_var['software']['size']['x']) + 'x' + str(app_var['software']['size']['y']))
 
 
 

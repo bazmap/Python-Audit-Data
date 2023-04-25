@@ -9,7 +9,6 @@ import importlib
 import subprocess
 
 import core.auditFile as auditFile
-import core.auditBDD as auditBDD
 import core.functions as functions
 import core.tk_rootInterface as tk_rootInterface
 
@@ -51,6 +50,11 @@ except ImportError:
 
 	# Affiche la sortie de la commande
 	ba_logger.info(output.decode())
+
+
+
+# L'import auditBDD nécessite d'avoir le module psycopg installé précédement
+import core.auditBDD as auditBDD
 
 
 
