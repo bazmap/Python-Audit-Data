@@ -209,7 +209,7 @@ class helpScreen(ba_tk.Toplevel):
 				self.widget[my_param + '_def'].insert('end', app_var['param']['software'][my_param]['help'])
 
 				self.widget[my_param + '_def'].insert('end', '\n' + 'Valeur attendue : ', "parametre")
-				self.widget[my_param + '_def'].insert('end', app_var['param']['software'][my_param]['type'] + ' - ' + app_var['param']['software'][my_param]['expected'], 'valeur')
+				self.widget[my_param + '_def'].insert('end', app_var['param']['software'][my_param]['type'] + ' - ' + str(app_var['param']['software'][my_param]['expected']), 'valeur')
 
 				self.widget[my_param + '_def'].insert('end', '\n' + 'Valeur par défaut : ', "parametre")
 				self.widget[my_param + '_def'].insertResize('end', default_value, 'valeur')

@@ -152,7 +152,7 @@ Avec :
 - `value_user` : valeur présentée à l'utilisateur lors de la génération d'un fichier de configuration type.  
   Par exemple la valeur vide `''` au lieu de `None` (nul).  
   Cette propriété ne doit pas être déclarée si elle n'est pas utilisée.
-- `expected` : valeurs attendue et présentées comme aide à l'utilisateur.
+- `expected` : valeurs attendue et présentées comme aide à l'utilisateur. Notez que vous pouvez utiliser une liste afin d'utiliser cette variable comme liste de valeur dans une combobox.
 - `group` : groupe auquel appartien la variable (utilisé dans les fichiers de configuration).
 - `label` : texte utilisé comme label dans les widgets de l'application.
 - `help` : description de la variable présentées comme aide à l'utilisateur.

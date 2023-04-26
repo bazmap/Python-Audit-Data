@@ -45,7 +45,7 @@ def argumentParser(software_info, config_var_default):
 		# Suppression de l'aide pour certains arguments
 		# L'argument est donc toujours disponible si besoin
 		if 'argument' in config_var_default[key]['input_scope']:
-			help_arg = config_var_default[key]['help'] + ' \nValeur attendue : ' + config_var_default[key]['type'] + ' - ' + config_var_default[key]['expected'] + '\nValeur par défaut : ' + default_arg
+			help_arg = config_var_default[key]['help'] + ' \nValeur attendue : ' + config_var_default[key]['type'] + ' - ' + str(config_var_default[key]['expected']) + '\nValeur par défaut : ' + default_arg
 		else:
 			help_arg = argparse.SUPPRESS
 

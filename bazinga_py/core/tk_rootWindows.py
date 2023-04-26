@@ -111,6 +111,9 @@ class rootWindows(ba_tk.Tk):
 			app_var['param']['init_tk'][key] = copy.deepcopy(app_var['param']['init'][key])
 			app_var['param']['init_tk'][key].pop('value')
 
+			if 'type' not in app_var['param']['init'][key]:
+				app_var['param']['init'][key]['type'] = 'string';
+
 
 			if app_var['param']['init'][key]['type'] == 'boolean':
 				app_var['param']['init_tk'][key]['value'] = tk.BooleanVar()

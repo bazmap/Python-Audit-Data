@@ -54,8 +54,10 @@ def getConfigVar(standard_config, var_configFile, var_args):
 	# Récupération des valeurs du fichier de config
 	# On récupère aussi les variables supplémentaires définies dans le fichier mais non prévues par défaut.
 	for key in var_configFile:
-		if 'value' not in final_config[key]:
+		if key not in final_config:
 			final_config[key] = dict()
+
+		if 'value' not in final_config[key]:
 			final_config[key]['group'] = var_configFile[key]['group']
 
 		final_config[key]['value'] = var_configFile[key]['value']
@@ -181,6 +183,7 @@ def retrieveConfigFile(config_var, default = True):
 
 			if (
 				config_var[key]['group'] == group 
+				and 'input_scope' in config_var[key]
 				and 'config' in config_var[key]['input_scope']
 			):
 
@@ -198,7 +201,7 @@ def retrieveConfigFile(config_var, default = True):
 					config_file_content += str(config_var[key]['value'] or 'None')
 
 				config_file_content += '\n' + '# ' + config_var[key]['help'].replace("\n", "\n# ")
-				config_file_content += '\n' + '# Valeur attendue : ' + config_var[key]['type'] + ' - ' + config_var[key]['expected']
+				config_file_content += '\n' + '# Valeur attendue : ' + config_var[key]['type'] + ' - ' + str(config_var[key]['expected'])
 		
 	return config_file_content
 
