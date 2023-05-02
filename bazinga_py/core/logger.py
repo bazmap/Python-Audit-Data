@@ -44,6 +44,7 @@ def createLogger(log_name, log_directory, min_logging_level = 'DEBUG', stdout_lo
 def createRotatingFileHandler(log_name, log_directory, nb_of_log = 10, prefix_to_delete = 'log'):
 
 	# Suppression des anciens logs
+	# -1 car il faut tenir compte du fichier qui va être créé pour l'instance actuelle
 	limitFileNumber(log_directory, (nb_of_log - 1), prefix_to_delete)
 
 
@@ -68,6 +69,7 @@ def createRotatingFileHandler(log_name, log_directory, nb_of_log = 10, prefix_to
 def createFileHandler(log_name, log_directory, nb_of_log = 10, prefix_to_delete = 'log'):
 
 	# Suppression des anciens logs
+	# -1 car il faut tenir compte du fichier qui va être créé pour l'instance actuelle
 	limitFileNumber(log_directory, (nb_of_log - 1), prefix_to_delete)
 
 

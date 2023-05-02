@@ -53,19 +53,20 @@ def getConfigVar(standard_config, var_configFile, var_args):
 
 	# Récupération des valeurs du fichier de config
 	# On récupère aussi les variables supplémentaires définies dans le fichier mais non prévues par défaut.
-	for key in var_configFile:
-		if key not in final_config:
-			final_config[key] = dict()
+	if var_configFile != None:
+		for key in var_configFile:
+			if key not in final_config:
+				final_config[key] = dict()
 
-		if 'value' not in final_config[key]:
-			final_config[key]['group'] = var_configFile[key]['group']
+			if 'value' not in final_config[key]:
+				final_config[key]['group'] = var_configFile[key]['group']
 
-		final_config[key]['value'] = var_configFile[key]['value']
+			final_config[key]['value'] = var_configFile[key]['value']
 
-		if 'scope' not in final_config[key]:
-			final_config[key]['scope'] = ['config']
-		elif 'config' not in final_config[key]['scope']:
-			final_config[key]['scope'].append('config')
+			if 'scope' not in final_config[key]:
+				final_config[key]['scope'] = ['config']
+			elif 'config' not in final_config[key]['scope']:
+				final_config[key]['scope'].append('config')
 
 
 
