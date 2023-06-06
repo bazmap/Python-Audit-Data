@@ -145,11 +145,20 @@ class rootWindows(ba_tk.Tk):
 			'<<menu_fichier-open_config_file>>', 
 			self.open_config_file
 		)
+		self.bind(
+			'<Control-o>',
+			self.open_config_file
+		)
 
 		self.bind(
 			'<<menu_fichier-save_config_file>>', 
 			self.save_config_file
 		)
+		self.bind(
+			'<Control-s>',
+			self.save_config_file
+		)
+
 
 
 

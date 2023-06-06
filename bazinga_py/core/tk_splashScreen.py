@@ -34,7 +34,7 @@ class splashScreen(ba_tk.Toplevel):
 		# Polices
 		self.font_custom_title = tkFont.Font(
 			family = tkFont.nametofont("TkDefaultFont").actual()['family'],
-			size = 32,
+			size = 26,
 			weight = "bold",
 			slant = "roman"
 		)
@@ -104,7 +104,7 @@ class splashScreen(ba_tk.Toplevel):
 		# Ajout du titre
 		self.canvasTitle = self.canvas.create_text(
 			self.windowWidth - 10,
-			10,
+			100,
 			anchor = "ne",
 			text = app_var['software']['name'],
 			fill = self.color_foreground,
