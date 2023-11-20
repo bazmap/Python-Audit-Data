@@ -1441,8 +1441,8 @@ BEGIN
 							string_agg(quote_ident(pgc_pgi.relname) || ' (' || am.amname || ')', ',' || CHR(10)) AS "index",
 							string_agg(quote_ident(pgc_pk.conname), ',' || CHR(10)) AS "cle_primaire",
 							string_agg(quote_ident(pgconst_fk.conname) || ' : ' || quote_ident(pgns_fk.nspname) || '.' || quote_ident(pgcla_fk.relname) || '.' || quote_ident(pga_fk.attname), ',' || CHR(10)) AS "cle_etrangere",
-							string_agg(quote_ident(pgc_chk.conname) || ' : ' || pgc_chk.consrc, ',' || CHR(10)) AS "ct_check",
-							pgdef.adsrc AS "valeur_defaut",
+							string_agg(quote_ident(pgc_chk.conname) || ' : ' || pg_get_constraintdef(pgc_chk.oid), ',' || CHR(10)) AS "ct_check",
+							pg_get_expr(pgdef.adbin, pgdef.adrelid) AS "valeur_defaut",
 							rtrim(replace("substring"(pgd.description, 'Commentaire : [^@@]+'), 'Commentaire : ', '')) AS "commentaire"
 						-- Liste des schémas
 						FROM pg_catalog.pg_namespace pgn

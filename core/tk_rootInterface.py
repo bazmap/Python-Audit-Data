@@ -343,12 +343,9 @@ class rootInterface(ttk.Frame):
 			self.tab2_frame1, 
 			text = 'Parcourir...',
 			command = lambda : (
-				self.select_savefile(
+				self.select_dir(
 					parent,
 					os.path.dirname(ba_app_var['param']['init']['emplacementFichierAuditBDD']['value']),
-					[("Fichier CSV", ".csv"), ("All files", ".*")],
-					'fichier_audit',
-					'.csv',
 					'emplacementFichierAuditBDD'
 				)
 			)

@@ -28,7 +28,7 @@ try:
 	ba_logger.info("Mise à jour")
 
 	# Commande pour installer psycopg
-	command = "pip install --upgrade psycopg"
+	command = "pip install --upgrade psycopg[binary]"
 	ba_logger.info("Mise à jour automatique : " + command)
 
 	# Exécute la commande et capture la sortie
